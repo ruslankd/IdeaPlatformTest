@@ -24,3 +24,5 @@ dependencyResolutionManagement {
 rootProject.name = "IdeaPlatformTest"
 include(":app")
 include(":core:uikit")
+include(":core:database")
+include(":core:data")
