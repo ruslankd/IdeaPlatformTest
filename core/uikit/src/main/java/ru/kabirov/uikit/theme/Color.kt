@@ -1,4 +1,4 @@
-package ru.kabirov.ideaplatformtest.ui.theme
+package ru.kabirov.uikit.theme
 
 import androidx.compose.ui.graphics.Color
 

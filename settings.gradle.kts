@@ -1,3 +1,5 @@
+enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
+
 pluginManagement {
     repositories {
         google {
@@ -21,4 +23,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "IdeaPlatformTest"
 include(":app")
- 
+include(":core:uikit")
