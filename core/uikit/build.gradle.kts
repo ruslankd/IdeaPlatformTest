@@ -44,4 +44,6 @@ dependencies {
     api(libs.androidx.material3)
     debugApi(libs.androidx.ui.tooling)
     debugApi(libs.androidx.ui.test.manifest)
+
+    implementation(libs.accompanist.systemuicontroller)
 }

@@ -22,4 +22,21 @@ class GoodsRepositoryImpl @Inject constructor(
 
         return merge(start, goodsFlow)
     }
+
+    override fun getGoodsByQuery(query: String): Flow<RequestResult<List<Goods>>> {
+        val start = flowOf<RequestResult<List<Goods>>>(RequestResult.InProgress())
+        val goodsFlow = database.goodsDao.getGoodsByQuery(query).map { goodsList ->
+            RequestResult.Success(goodsList.map { it.toGoods() })
+        }
+
+        return merge(start, goodsFlow)
+    }
+
+    override suspend fun deleteGoods(id: Long) {
+        database.goodsDao.deleteGoodsById(id)
+    }
+
+    override suspend fun updateGoodsAmountById(id: Long, amount: Long) {
+        database.goodsDao.updateGoodsAmountById(id, amount)
+    }
 }

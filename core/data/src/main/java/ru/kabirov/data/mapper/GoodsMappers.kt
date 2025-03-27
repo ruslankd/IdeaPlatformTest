@@ -16,9 +16,13 @@ internal fun GoodsDbo.toGoods(): Goods =
     )
 
 private fun String.toTagsList(): List<String> =
-    substring(1..<length - 1)
-        .split(", ")
-        .map { it.substring(1..<it.length - 1) }
+    if (length > 1) {
+        substring(1..<length - 1)
+            .split(", ")
+            .map { if (it.length > 1) it.substring(1..<it.length - 1) else "" }
+    } else {
+        emptyList()
+    }
 
 private fun Long.toDateString(): String {
     val date = Date(this)
